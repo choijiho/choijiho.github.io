@@ -1,3 +1,5 @@
+
+
 <header class="site-header">
 
   <div class="wrapper">
@@ -13,12 +15,18 @@
         </svg>
       </a>
 
+      {% assign pages = site.pages | sort:"weight" %}
       <div class="trigger">
-        {% for page in site.pages %}
+        {% for page in pages %}
           {% if page.title %}
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
+      </div>
+
+
+      <div class="trigger">
+
       </div>
     </nav>
 

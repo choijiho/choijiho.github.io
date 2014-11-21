@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Ionic 설치"
+categories: hybrid 
+---
+####**설치**
+
+
+[Cordova까지 설치](/hybrid/2014/11/18/cordova-install.html)되어 있다면 Ionic 설치는 민망할 정도로 간단하다.
+
+
+    sudo npm install -g ionic

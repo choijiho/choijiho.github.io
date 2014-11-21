@@ -2,22 +2,54 @@
 layout: default
 ---
 
-<div class="home">
+<div class="col-md-8">
 
-  <h1 class="page-heading">Posts</h1>
+  <h2><a href="/programming">Programming</a></h2>
+    <h3 class="post-meta">소프트웨어 개발자 입니다.</h3>
+    <h3 class="post-meta">소프트웨어 개발이 직업이기도 하지만 취미이기도 합니다.</h3>
+    <h3 class="post-meta">이 블로그의 첫번째 목적은 제가 먼저 공부한 내용을 같은 관심을 갖고 있는 대한민국 개발자에게 조금이나마 도움이 될 수 있는 컨텐츠를 제공하는 것입니다. </h3>
+    <h3 class="post-meta">두번째 목적은 제가 공부하고 개발한 내용을 정리하는데 있습니다. </h3>
+    <p>&nbsp;</p>
+  <h2><a href="/and">and</a></h2>
+    <h3 class="post-meta">소프트웨어 개발, 사진 외의 이야기를 올릴 공간입니다.</h3>
+    <h3 class="post-meta">글 쓰는것을 좋아하는 편은 아니지만 머리를 식힐 때 이런저런 내용들을 올릴 것입니다.</h3>
+    <p>&nbsp;</p>
+  <h2><a href="/photograph">Photograph</a></h2>
+    <h3 class="post-meta">사진을 좋아합니다.</h3>
+    <h3 class="post-meta">사진을 찍는것, 보는것, 사진기 자체도 좋아합니다.</h3>
+    <h3 class="post-meta">마음에 드는 사진을 찍었을 때 사진을 올리는 공간으로 사용 할 것입니다.</h3>
+</div>
+
+<!--
+<div class="col-md-3">
+  <h1 class="page-heading">Post</h1>
 
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
+</div>
+-->
+
+<div class="col-md-4">
+  <h4>Post</h4>
+  <ul>
+  {% for category in site.categories %}
+    <li><strong>{{ category | first | capitalize }}</strong></li>
+    <ul>
+      {% assign tmp = category | first %}
+      {% for post in site.categories[{{tmp}}] %}
+      <li><a class="page-link" href="{{ post.url | prepend: site.bseurl }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+    <p>&nbsp;</p>
+  {% endfor %}
+  </ul>
 </div>

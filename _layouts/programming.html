@@ -1,0 +1,51 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h2 class="text-center">{{ page.title }}</h2>
+  </header>
+
+
+  <section>
+    <h3>MEAN Project</h3>
+    <ul> 
+      {% for post in site.categories['mean'] %}
+      <li><a class="page-link" href="{{ post.url | prepend: site.bseurl }}"><h5>{{ post.title }}</h5></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h3>node.js</h3>
+    <ul> 
+      {% for post in site.categories['nodejs'] %}
+      <li><a class="page-link" href="{{ post.url | prepend: site.bseurl }}"><h5>{{ post.title }}</h5></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section>
+    <h3>AngularJS</h3>
+    <ul> 
+      {% for post in site.categories['angular'] %}
+      <li><a class="page-link" href="{{ post.url | prepend: site.bseurl }}"><h5>{{ post.title }}</h5></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  
+  <section>
+    <h3>Android</h3>
+    <ul> 
+      {% for post in site.categories['android'] %}
+      <li><a class="page-link" href="{{ post.url | prepend: site.bseurl }}"><h5>{{ post.title }}</h5></a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+</div>
